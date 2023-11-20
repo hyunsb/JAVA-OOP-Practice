@@ -5,7 +5,6 @@ import java.util.List;
 public class Bridges {
 
     private final List<Bridge> bridges;
-    private int location;
 
     private Bridges(List<Bridge> bridges) {
         this.validate(bridges);
@@ -26,11 +25,14 @@ public class Bridges {
         return new Bridges(bridges);
     }
 
+    public boolean isMatched(int position, Bridge bridge) {
+        return bridges.get(position).equals(bridge);
+    }
+
     @Override
     public String toString() {
         return "Bridges{" +
                 "bridges=" + bridges +
-                ", location=" + location +
                 '}';
     }
 }

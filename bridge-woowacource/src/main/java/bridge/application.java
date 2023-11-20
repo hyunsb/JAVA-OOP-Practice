@@ -1,11 +1,10 @@
 package bridge;
 
-import bridge.domain.BridgeSize;
-import bridge.view.InputView;
+import bridge.controller.BridgeGameController;
 
 public class application {
     public static void main(String[] args) {
-        BridgeSize bridgeSize = InputView.readBridgeSize();
-        System.out.println(bridgeSize);
+        BridgeGameController bridgeGameController = new BridgeGameController();
+        bridgeGameController.run();
     }
 }
