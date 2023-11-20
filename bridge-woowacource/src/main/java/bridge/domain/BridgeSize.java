@@ -1,15 +1,12 @@
 package bridge.domain;
 
-public class BridgeSize {
+public record BridgeSize(int bridgeSize) {
 
     private static final int MAX_SIZE = 20;
     private static final int MIN_SIZE = 3;
 
-    private final int bridgeSize;
-
-    public BridgeSize(int bridgeSize) {
+    public BridgeSize {
         this.validate(bridgeSize);
-        this.bridgeSize = bridgeSize;
     }
 
     private void validate(int bridgeSize) {
