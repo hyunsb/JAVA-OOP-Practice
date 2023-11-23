@@ -2,6 +2,7 @@ package bridge.view;
 
 import bridge.domain.BridgeSize;
 import bridge.domain.MoveCommand;
+import bridge.domain.RetryCommand;
 import bridge.util.Console;
 
 import java.util.function.Supplier;
@@ -45,5 +46,14 @@ public class InputView {
         } catch (NumberFormatException exception) {
             throw new IllegalArgumentException("숫자만 입력하세요.");
         }
+    }
+
+    public static RetryCommand readRetryCommand() {
+        System.out.println("게임을 다시 시도 하시겠습니까?");
+
+        return repeatUntilNoException(() -> {
+            String command = Console.readLine();
+            return RetryCommand.from(command);
+        });
     }
 }

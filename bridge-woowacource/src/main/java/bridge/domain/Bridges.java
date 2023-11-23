@@ -1,5 +1,7 @@
 package bridge.domain;
 
+import bridge.dto.BridgesDto;
+
 import java.util.List;
 
 public class Bridges {
@@ -27,6 +29,10 @@ public class Bridges {
 
     public boolean isMatched(int position, Bridge bridge) {
         return bridges.get(position).equals(bridge);
+    }
+
+    public BridgesDto toDto() {
+        return new BridgesDto(bridges);
     }
 
     @Override
